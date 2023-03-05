@@ -6,24 +6,27 @@ const UserSchema = new mongoose.Schema(
             type: String,
             required: true,
             min: 2,
-            max: 20
+            max: 50
         },
+
         email: {
             type: String,
             required: true,
-            min: 5,
+            min: 2,
             max: 50
         },
         password: {
             type: String,
             required: true,
-            min: 8,
-            max: 20
+            min: 2,
+            max: 50
         },
+
         picturePath: {
             type: String,
             default: "https://i.ibb.co/6YK1cXs/avatar.jpg"
         },
+
 
     }, {
     timestamps: true

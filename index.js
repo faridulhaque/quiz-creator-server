@@ -5,7 +5,8 @@ import cors from 'cors';
 import dotenv from "dotenv";
 import helmet from "helmet"
 import morgan from 'morgan'
-import authRouter from './services/routes/auth.routes.js';
+import authRoutes from './services/routes/auth.routes.js';
+import questionPaperRoutes from './services/routes/questionPaper.routes.js'
 
 dotenv.config()
 
@@ -20,7 +21,8 @@ app.use(bodyParser.urlencoded({ limit: "300mb", extended: true }))
 app.use(cors())
 
 
-app.use("/auth", authRouter)
+app.use("/auth", authRoutes)
+app.use("/qp", questionPaperRoutes)
 
 
 // mongoose connect

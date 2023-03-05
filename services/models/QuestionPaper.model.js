@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import QuestionsSchema from "./questions.model.js";
 
 const QuestionPaperSchema = new mongoose.Schema({
     moderator: {
@@ -19,30 +20,20 @@ const QuestionPaperSchema = new mongoose.Schema({
         min: 5,
         max: 40,
     },
-    questionsGroup: {
-        question: {
-            type: String,
-            required: true,
-        },
-        answers: {
-            type: [
-                {
-                    text: {
-                        type: String,
-                        required: true
-                    },
-                    isCorrect: {
-                        type: Boolean,
-                        required: true
-                    }
-                }
-            ],
-            default: []
-        }
+    questions: {
+        type: [QuestionsSchema],
+        default: [],
     },
+
+    duration: String,
+    start: String,
+
+
 }, { timestamps: true })
 
 
 const questionPaperModel = mongoose.model("QuestionPaper", QuestionPaperSchema);
 
 export default questionPaperModel;
+
+
