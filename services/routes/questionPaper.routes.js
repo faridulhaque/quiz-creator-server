@@ -1,11 +1,12 @@
 import express from "express";
-import { createQuestionPaper, addQuestionGroup } from "../controllers/quiz/questionPaper.js";
+import { createQuestionPaper, updateQuestionPaper, deleteQuestionPaper } from "../controllers/quiz/questionPaper.js";
 
 
 const questionPaperRouter = express.Router()
 
 questionPaperRouter.post("/create", createQuestionPaper)
-questionPaperRouter.put("/:id/add", addQuestionGroup)
+questionPaperRouter.patch("/:id/update", updateQuestionPaper)
+questionPaperRouter.delete("/:id/delete", deleteQuestionPaper)
 
 
 export default questionPaperRouter;

@@ -7,6 +7,8 @@ import helmet from "helmet"
 import morgan from 'morgan'
 import authRoutes from './services/routes/auth.routes.js';
 import questionPaperRoutes from './services/routes/questionPaper.routes.js'
+import questionsRoutes from './services/routes/questions.routes.js'
+import questionGroupRoutes from './services/routes/questionGroup.routes.js'
 
 dotenv.config()
 
@@ -23,6 +25,8 @@ app.use(cors())
 
 app.use("/auth", authRoutes)
 app.use("/qp", questionPaperRoutes)
+app.use("/questions", questionsRoutes)
+app.use("/qg", questionGroupRoutes)
 
 
 // mongoose connect
