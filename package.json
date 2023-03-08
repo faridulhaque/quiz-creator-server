@@ -5,6 +5,7 @@
   "type": "module",
   "license": "MIT",
   "dependencies": {
+    
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
@@ -16,5 +17,6 @@
     "mongoose": "^7.0.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.21"
+
   }
 }
