@@ -9,8 +9,8 @@ const QuestionPaperSchema = new mongoose.Schema({
     max: 50,
   },
   status: {
-    type: String,
-    default: "Incomplete",
+    type: Boolean,
+    default: false,
   },
   title: {
     type: String,
@@ -20,9 +20,7 @@ const QuestionPaperSchema = new mongoose.Schema({
   },
   quantity: {
     type: Number,
-    required: true,
-    min: 5,
-    max: 40,
+    default: 0
   },
   attendance: {
     type: [{
@@ -47,8 +45,7 @@ const QuestionPaperSchema = new mongoose.Schema({
   },
   start: {
     type: Date,
-    required: true,
-    
+
   },
 }, { timestamps: true });
 
